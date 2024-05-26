@@ -4,7 +4,7 @@ function HomePage() {
     const navigate = useNavigate()
     const jump = (id: number) => {
 
-        navigate(`/about/teamPage/${id}`)
+        navigate(`/about/teamPage/${id}?age=23`)
         // navigate(`/about`)
     }
     return <div>
