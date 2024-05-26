@@ -1,55 +1,45 @@
 // import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
+import styled, { css } from 'styled-components'
 
-function MyBlock({ size, children }) {
-  let [num, setNum] = useState(1)
-  let [label, setLabel] = useState(10)
-  const handleClick = () => {
-    // alert(`clicked ${size}`)
-    // setNum(++num)
-    ++label
-    setNum(++num)
-    if (num % 10 == 0) {
-      setLabel(++label)
-    }
+
+const Button = styled.a`
+  background-color: ${props => props.primary ? 'blue' : 'grey'};
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  span{
+    color:red
   }
+  &:hover{
+    color:green
+  }
+  ${props => props.disabled && css`
+    color:#777;
+    border:1px solid #777;
+    cursor:not-allowed;
+    background: #ee3;
+    `}
+`;
 
-  useEffect(() => {
-    console.log('mounted')
-    return () => {
-      console.log('退出')
-    }
-  }, [])
-  useEffect(() => {
-    console.log('num改变')
-    return () => {
-      console.log('退出2')
-    }
-  }, [num])
+const BigButton = styled(Button)`
+  width: 200px;
+  height: 200px;
+`
 
-  return (
-    <>
-      <div style={{ color: 'red', fontSize: size || '22px' }}>
-        hi , boy - {num}
-        <p>{'label:' + label}</p>
-
-      </div>
-      <p onClick={handleClick}>{children}</p>
-    </>
-  )
-}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Button>hello
+          <span>t</span>
+        </Button>
+        <Button disabled>btn</Button>
+        <BigButton disabled>BigButton</BigButton>
 
-        {/* {MyBlock({})} */}
-        <MyBlock size='30px'></MyBlock>
-        <MyBlock size='30px'>
-          <button>点击</button>
-        </MyBlock>
       </header>
     </div>
   );
