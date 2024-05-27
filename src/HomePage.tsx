@@ -15,11 +15,19 @@ function HomePage() {
             state: { a: 'a', fromHome: true }
         });
     }
+
+    const jump3 = (id: number) => {
+
+        navigate(`/contact`, {
+            state: { a: 'a', }
+        });
+    }
     return <div>
         <div>HomePage</div>
         <div>
             <button onClick={() => jump(1)}>点击</button>
             <button onClick={() => jump2(1)}>点击2</button>
+            <button onClick={() => jump3(1)}>点击3</button>
         </div>
     </div>
 }

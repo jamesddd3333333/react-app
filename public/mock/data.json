@@ -1,0 +1,17 @@
+{
+    "name": "Kimi",
+    "company": "Moonshot AI",
+    "skills": [
+        "对话",
+        "搜索",
+        "文件处理"
+    ],
+    "languages": {
+        "Chinese": "流利",
+        "English": "流利"
+    },
+    "availability": {
+        "weekdays": true,
+        "weekends": false
+    }
+}
