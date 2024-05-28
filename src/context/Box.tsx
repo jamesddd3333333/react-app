@@ -1,4 +1,4 @@
-import { FC, createContext, useState } from "react"
+import { createContext, useState } from "react"
 
 
 export interface MyContextType {

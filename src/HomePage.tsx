@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import Box, { MyContext, MyContextType } from "./context/Box"
+import { MyContext, MyContextType } from "./context/Box"
 
 
 
@@ -15,10 +15,10 @@ function HomePage() {
         setValue('aaa')
     }
     return <div>
-        <Box>
-            {value}
-            <button onClick={() => hanleClick}>修改</button>
-        </Box>
+
+        {value}
+        <button onClick={() => hanleClick}>修改</button>
+
     </div>
 }
 
