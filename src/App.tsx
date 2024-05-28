@@ -1,26 +1,14 @@
+// App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import AboutPage from './about/AboutPage';
-import LeadershipPage from './about/LeadershipPage';
-import TeamPage from './about/TeamPage';
-import ContactPage from './ContactPage';
+import ContextProvider from './ContextProvider';
+import ConsumerComponent from './ConsumerComponent';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} >
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="teamPage" element={<TeamPage />} />
-          <Route path="/about/leadershipPage" element={<LeadershipPage />} />
-        </Route>
-        <Route path="/contact" element={<ContactPage />} />
-        {/* 可以添加更多路由 */}
-      </Routes>
-    </Router>
+    <ContextProvider>
+      <ConsumerComponent />
+    </ContextProvider>
   );
-}
+};
 
 export default App;
