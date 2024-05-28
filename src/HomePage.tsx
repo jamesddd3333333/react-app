@@ -1,15 +1,24 @@
-import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import Box, { MyContext, MyContextType } from "./context/Box"
+
+
+
 
 function HomePage() {
-    const navigate = useNavigate()
-    const jump = () => {
-        navigate('/about')
+
+
+
+    const context = useContext<MyContextType>(MyContext)
+    const { value, setValue } = context
+
+    const hanleClick = () => {
+        setValue('aaa')
     }
     return <div>
-        <div>HomePage</div>
-        <div>
-            <button onClick={jump}>点击</button>
-        </div>
+        <Box>
+            {value}
+            <button onClick={() => hanleClick}>修改</button>
+        </Box>
     </div>
 }
 
