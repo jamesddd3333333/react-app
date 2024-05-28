@@ -17,7 +17,7 @@ function HomePage() {
     return <div>
 
         {value}
-        <button onClick={() => hanleClick}>修改</button>
+        <button onClick={() => hanleClick()}>修改</button>
 
     </div>
 }
