@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import './App.css';
 
-type actionType = { type: 'add' } | { type: 'minus' }
+type actionType = { type: 'add' | 'minus' }
 interface State {
   count: number;
 }
@@ -29,6 +29,7 @@ function App() {
     <div className="App">
       <button onClick={add}>加</button>
       <button onClick={minus}>减</button>
+      <div>Count: {state.count}</div> {/* 显示当前计数 */}
     </div>
   );
 }
