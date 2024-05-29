@@ -1,11 +1,14 @@
 import React, { useReducer } from 'react';
 import './App.css';
 
-
+type actionType = { type: 'add' } | { type: 'minus' }
+interface State {
+  count: number;
+}
 
 function App() {
   // Parameter 'state' implicitly has an 'any' type. Parameter 'action' implicitly has an 'any' type.
-  const reducer = (state, action) => {
+  const reducer = (state: State, action: actionType): State => {
     switch (action.type) {
       case 'add':
         return { count: state.count++ };
