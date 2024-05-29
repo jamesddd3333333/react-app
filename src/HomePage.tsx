@@ -12,7 +12,10 @@ function HomePage() {
     const { value, setValue } = context
 
     const hanleClick = () => {
-        setValue('aaa')
+        // @ts-ignore
+        setValue((c: string) => {
+            return 'aaddd'
+        })
     }
     return <div>
 
